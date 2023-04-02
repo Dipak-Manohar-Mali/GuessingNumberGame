@@ -3,7 +3,7 @@ import java.util.*;
 
 public class StartGuessingNumber{
     static int getPoint=0;
-    public static void main(String[] args) {
+    public static void main(String[] args) {                //Execution Start form here
         Scanner sc=new Scanner(System.in);
         Guisser g=new Guisser();
         Player p=new Player();
@@ -19,13 +19,13 @@ public class StartGuessingNumber{
             if(c==1)
             {
                 int gNumber=g.GuessingNumber();
-                System.out.println(gNumber);
+                System.out.println(gNumber);              //its print Generated number that playerr have to Guess(For understanding i have print here)
                 
                 while(limit!=0){
                 
-                int pNumber=p.TakeInput();
+                int pNumber=p.TakeInput();                 
                
-                getPoint +=r.compair(gNumber,pNumber,limit,0);
+                getPoint +=r.compair(gNumber,pNumber,limit,0);          //here accept the point( and add them) before this step it pass the values to the compare function of Result class to compute the result.
             
                 limit--;
                 }
@@ -65,7 +65,7 @@ public class StartGuessingNumber{
 }
 
 
-class Guisser{
+class Guisser{                      //this class Genrate Number Only(for Guessing )
     Random rd=new Random();
    
     int GuessingNumber(){
@@ -75,14 +75,14 @@ class Guisser{
     }
 }
 
-class Player{
+class Player{                                                       //this class is taking input(Guess) from the player
     Scanner sc=new Scanner(System.in);
     int pNumber;
 
     int TakeInput(){
         System.out.println("Enter the Number(Guess):");
         pNumber=sc.nextInt();
-        return pNumber;
+        return pNumber;                                                             //return guess(Player Guess)
     }
     
 }
@@ -104,7 +104,7 @@ class Result{
         {
             noGuess=false;
             System.out.println(limit);
-            switch(limit){
+            switch(limit){                                      //this switch case assign the points according to the attempt
 
                 case 5:
                 System.out.println("You get 50 Point");
